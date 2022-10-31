@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Quebra-cabeça</title>
+</head>
+<body>
+    <article id="telaInicial" class="page">
+        <h1>Desafio - Quebra-cabeça</h1>
+            <form>
+                <label>Qual o seu nome?</label>
+                <input id="inputName" type="text" placeholder="Digite o seu nome">
+                <button id="btnGamer">Jogar!</button>
+            </form>
+    </article>
+    <article id="telaEscolha" class="page hide">
+        <h1>Escolha o quebra-cabeça!</h1>
+        <section >
+            <!-- <div id="imageOptions">
+                <img src="./img/treeway/treeway.jpg" id="imgEscolhida1" alt="">
+                <img src="./img/town/town-base.jpg" id="imgEscolhida2" alt="">
+                <img src="./img/arabmetal/arabmetal.jpg" id="imgEscolhida3" alt="">
+            </div>
+            -->
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./img/treeway/treeway.jpg" id="treewayImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/town/town-base.jpg" id="townImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/arabmetal/arabmetal.jpg" id="arabMetalImg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        
+    </article>  
+    <article id="telaPrincipal" class="page hide">
+        <h1>Let's go!</h1>
+        <section id="board">
+            <table id="imgGrid">
+                <tr>
+                    <td class="pos"></td>
+                    <td class="pos"></td>
+                    <td class="pos"></td>
+                </tr>
+                <tr>
+                    <td class="pos"></td>
+                    <td class="pos"></td>
+                    <td class="pos"></td>
+                </tr>
+                <tr>
+                    <td class="pos"></td>
+                    <td class="pos"></td>
+                    <td class="pos"></td>
+                </tr>
+
+            </table>
+
+        </section>
+    </article>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./src/game.js"></script>
+    <script src="./src/index.js" ></script>  
+</body>
+</html>

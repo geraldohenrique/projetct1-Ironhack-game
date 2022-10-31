@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+article{
+    height: 100vh;
+}
+
+#telaInicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+#telaEscolha{
+   flex-direction: column;
+   align-items: center;
+}
+h1{
+    margin: 3rem 0 ;
+}
+
+#imageOptions {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+#carouselExampleControls{
+    height: 60vh;
+    width: 60vh;
+    border: 2px solid black;
+}
+
+#telaPrincipal{
+    flex-direction: column;
+    align-items: center;
+
+}
+#imgGrid{
+    height: 60vh;
+    width: 60vh;
+}
+.pos>img{
+    height: 20vh;
+}
+
+
