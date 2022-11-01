@@ -28,6 +28,7 @@ imgEscolhida1.addEventListener('click', (event) =>{
     const partida = new QuebraCabeca(imgEscolhida1.id)
     partida.obterGridPadrao();
     partida.montarGridEmbaralhado();
+    jogar(partida);
 })
 
 imgEscolhida2.addEventListener('click', (event) =>{
@@ -36,6 +37,7 @@ imgEscolhida2.addEventListener('click', (event) =>{
     const partida = new QuebraCabeca(imgEscolhida2.id)
     partida.obterGridPadrao();
     partida.montarGridEmbaralhado();
+    jogar(partida);
 })
 
 imgEscolhida3.addEventListener('click', (event) =>{
@@ -45,7 +47,22 @@ imgEscolhida3.addEventListener('click', (event) =>{
     const partida = new QuebraCabeca(imgEscolhida3.id)
     partida.obterGridPadrao();
     partida.montarGridEmbaralhado();
+    jogar(partida);
 })
+
+
+
+function jogar(partida) {
+    const posAtualizada = document.querySelectorAll('.peca')
+    
+    posAtualizada.forEach((item, indice) =>{
+        item.addEventListener('click', () =>{
+            item.classList.add = 'selectImg';
+            partida.trocarPosicao(item.src, indice)            
+        })
+    })
+    
+}
 
 
 

@@ -1,7 +1,8 @@
 class QuebraCabeca{
     constructor(imgBase){
         this.imgBase = imgBase;
-        this.imgSelectd;
+        this.imgSelect = [];
+        this.indiceSelect = [];
         this.userName;
         this.gridPadrao = [];
     }
@@ -63,9 +64,28 @@ class QuebraCabeca{
             console.log (`img: ${img} i: ${i}`)
             let pecaImg = document.createElement('img');
             pecaImg.src = img;
+            pecaImg.className = 'peca'
             grid[i].appendChild(pecaImg);
             
         })
 
     }
+
+    trocarPosicao(peca, indice){
+        let posAtual = document.querySelectorAll('.peca');
+        console.log(posAtual);
+        this.imgSelect.push(peca);
+        this.indiceSelect.push(indice);
+        console.log(this.imgSelect)
+        console.log(this.indiceSelect)
+        if (this.imgSelect.length === 2){
+            posAtual[this.indiceSelect[0]].src = this.imgSelect[1];
+            posAtual[this.indiceSelect[1]].src = this.imgSelect[0]; 
+            console.log(posAtual);
+            this.imgSelect = [];
+            this.indiceSelect = [];
+        }
+        
+    }
+
 }
