@@ -26,8 +26,8 @@ imgEscolhida1.addEventListener('click', (event) =>{
     telaEscolha.style.display = "none";
     telaPrincipal.style.display = "flex";
     const partida = new QuebraCabeca(imgEscolhida1.id)
-    partida.obterGridPadrao();
-    partida.montarGridEmbaralhado();
+    partida.obterGrids();
+    partida.montarGrids();
     jogar(partida);
 })
 
@@ -35,8 +35,8 @@ imgEscolhida2.addEventListener('click', (event) =>{
     telaEscolha.style.display = "none";
     telaPrincipal.style.display = "flex";
     const partida = new QuebraCabeca(imgEscolhida2.id)
-    partida.obterGridPadrao();
-    partida.montarGridEmbaralhado();
+    partida.obterGrids();
+    partida.montarGrids();
     jogar(partida);
 })
 
@@ -45,8 +45,8 @@ imgEscolhida3.addEventListener('click', (event) =>{
     telaPrincipal.style.display = "flex";
     console.log(imgEscolhida3.id);
     const partida = new QuebraCabeca(imgEscolhida3.id)
-    partida.obterGridPadrao();
-    partida.montarGridEmbaralhado();
+    partida.obterGrids();
+    partida.montarGrids();
     jogar(partida);
 })
 

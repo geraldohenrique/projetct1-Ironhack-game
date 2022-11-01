@@ -5,9 +5,11 @@ class QuebraCabeca{
         this.indiceSelect = [];
         this.userName;
         this.gridPadrao = [];
+        this.gridEmbaralhado = [];
     }
 
-    obterGridPadrao(){
+    obterGrids(){
+        let copyGridPadrao =[];
         switch (this.imgBase){
             case 'treewayImg':
                 this.gridPadrao.push(
@@ -21,6 +23,10 @@ class QuebraCabeca{
                     '../img/treeway/treeway08.jpg',
                     '../img/treeway/treeway09.jpg'
                 )
+                copyGridPadrao =[...this.gridPadrao]
+                this.gridEmbaralhado = copyGridPadrao.sort(()=>{
+                    return Math.random() - 0.5;
+                })
                 break;
             case 'townImg':
                 this.gridPadrao.push(
@@ -34,6 +40,10 @@ class QuebraCabeca{
                     '../img/town/town08.jpg',
                     '../img/town/town09.jpg'
                 )
+                copyGridPadrao =[...this.gridPadrao]
+                this.gridEmbaralhado = copyGridPadrao.sort(()=>{
+                    return Math.random() - 0.5;
+                })
                 break;
             case 'arabMetalImg':
                 this.gridPadrao.push(
@@ -47,25 +57,33 @@ class QuebraCabeca{
                     '../img/arabmetal/arabmetal08.jpg',
                     '../img/arabmetal/arabmetal09.jpg'
                 )
+                copyGridPadrao =[...this.gridPadrao]
+                this.gridEmbaralhado = copyGridPadrao.sort(()=>{
+                    return Math.random() - 0.5;
+                })
                 break;
 
         }
-        return this.gridPadrao;
+        // return (this.gridPadrao, this.gridEmbaralhado);
 
     }
 
-    montarGridEmbaralhado(){
-        let gridEmbaralhado = this.gridPadrao.sort(()=>{
-            return Math.random() - 0.5;
-        })
-        console.log (gridEmbaralhado)
-        let grid = document.querySelectorAll('.pos')
-        gridEmbaralhado.forEach((img, i) => {
-            console.log (`img: ${img} i: ${i}`)
+    montarGrids(){
+        
+        let grid1 = document.querySelectorAll('.pos')
+        this.gridEmbaralhado.forEach((img, i) => {
             let pecaImg = document.createElement('img');
             pecaImg.src = img;
             pecaImg.className = 'peca'
-            grid[i].appendChild(pecaImg);
+            grid1[i].appendChild(pecaImg);
+            
+        })
+        let grid2 = document.querySelectorAll('.posPadrao')
+        this.gridPadrao.forEach((img, i) => {
+            let pecaImg = document.createElement('img');
+            pecaImg.src = img;
+            pecaImg.className = 'pecaPadrao'
+            grid2[i].appendChild(pecaImg);
             
         })
 
@@ -73,19 +91,26 @@ class QuebraCabeca{
 
     trocarPosicao(peca, indice){
         let posAtual = document.querySelectorAll('.peca');
-        console.log(posAtual);
         this.imgSelect.push(peca);
         this.indiceSelect.push(indice);
-        console.log(this.imgSelect)
-        console.log(this.indiceSelect)
         if (this.imgSelect.length === 2){
             posAtual[this.indiceSelect[0]].src = this.imgSelect[1];
             posAtual[this.indiceSelect[1]].src = this.imgSelect[0]; 
-            console.log(posAtual);
+            this.verificarGrid();
             this.imgSelect = [];
             this.indiceSelect = [];
         }
-        
     }
 
+    verificarGrid(){
+        let posAtual = document.querySelectorAll('.peca');
+        let posPadrao = document.querySelectorAll('.pecaPadrao');
+        let matrizValidacao = [];
+        posPadrao.forEach((item, index)=>{
+            matrizValidacao.push(item.src === posAtual[index].src);
+        })
+        if(!matrizValidacao.includes(false)){
+            alert(`Parabéns! Você ganhou`)
+        }
+    }
 }
