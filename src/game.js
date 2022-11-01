@@ -74,7 +74,7 @@ class QuebraCabeca{
         this.gridEmbaralhado.forEach((img, i) => {
             let pecaImg = document.createElement('img');
             pecaImg.src = img;
-            pecaImg.className = 'peca'
+            pecaImg.className = 'peca';
             grid1[i].appendChild(pecaImg);
             
         })
@@ -82,11 +82,10 @@ class QuebraCabeca{
         this.gridPadrao.forEach((img, i) => {
             let pecaImg = document.createElement('img');
             pecaImg.src = img;
-            pecaImg.className = 'pecaPadrao'
+            pecaImg.className = 'pecaPadrao';
             grid2[i].appendChild(pecaImg);
             
         })
-
     }
 
     trocarPosicao(peca, indice){
@@ -106,11 +105,27 @@ class QuebraCabeca{
         let posAtual = document.querySelectorAll('.peca');
         let posPadrao = document.querySelectorAll('.pecaPadrao');
         let matrizValidacao = [];
+        let tempo = document.querySelector('#tempo').innerHTML;
+        let ajudas = document.querySelector('#helps');
+        console.log(tempo);
         posPadrao.forEach((item, index)=>{
             matrizValidacao.push(item.src === posAtual[index].src);
         })
-        if(!matrizValidacao.includes(false)){
-            alert(`Parabéns! Você ganhou`)
+        if (ajudas.innerHTML < 1){
+            ajudas.style.color = 'red';
+            document.querySelector('#help').className = 'hide';
+        }
+        if(tempo > 0 && !matrizValidacao.includes(false)){
+            this.userName = document.querySelector("#inputName").value;
+            let titulo = document.querySelector('#tituloTelaPrincipal');
+            titulo.textContent = `Parabéns, ${this.userName}! Você ganhou`;
+            document.querySelector('#indicadores').className = 'hide';
+            document.querySelector('#help').className = 'hide';
+        }else if (tempo <= 1){
+            this.userName = document.querySelector("#inputName").value;
+            let titulo = document.querySelector('#tituloTelaPrincipal');
+            titulo.textContent = `Sentimos muito, ${this.userName}! Você não tem mais tempo.`;
+            document.querySelector('#board').className = 'hide';
         }
     }
 }

@@ -54,7 +54,14 @@ h1{
     height: 60vh;
     width: 60vh;
 }
+#imgGridPadrao{
+    height: 60vh;
+    width: 60vh;
+}
 .pos>img{
+    height: 20vh;
+}
+.posPadrao>img{
     height: 20vh;
 }
 

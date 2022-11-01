@@ -5,6 +5,10 @@ let telaEscolha = document.querySelector('#telaEscolha')
 let imgEscolhida1 = document.querySelector("#treewayImg")
 let imgEscolhida2 = document.querySelector("#townImg")
 let imgEscolhida3 = document.querySelector("#arabMetalImg")
+let btnHelp = document.querySelector("#help");
+let imgGrid = document.querySelector("#imgGrid");
+let imgGridPadrao = document.querySelector("#imgGridPadrao");
+let tempo = document.querySelector("#tempo");
 
 
 
@@ -16,6 +20,11 @@ btnGamer.addEventListener('click', (event) =>{
         alert("Digite um nome para iniciar a jogada");
         return
     }
+
+    let userName = document.querySelector("#inputName").value;
+    let titulo = document.querySelector('#tituloTelaEscolha');
+    titulo.textContent = `Bem vindo(a), ${userName}!
+    Escolha o seu Quebra-Cabeça:`
 
     telaInicial.style.display = "none";
     telaEscolha.style.display = "flex";
@@ -53,6 +62,7 @@ imgEscolhida3.addEventListener('click', (event) =>{
 
 
 function jogar(partida) {
+    tempo.innerHTML = 60;
     const posAtualizada = document.querySelectorAll('.peca')
     
     posAtualizada.forEach((item, indice) =>{
@@ -61,6 +71,30 @@ function jogar(partida) {
             partida.trocarPosicao(item.src, indice)            
         })
     })
+    btnHelp.addEventListener('mousedown',()=> {
+        imgGrid.className = 'hide';
+        imgGridPadrao.className = '';
+    })
+    btnHelp.addEventListener('mouseup',()=> {
+        imgGrid.className = '';
+        imgGridPadrao.className = 'hide';
+        document.querySelector('#helps').innerHTML--;
+        partida.verificarGrid();
+    })
+    
+    const intervalId = setInterval(() =>{
+        if (tempo.innerHTML <= 11){
+            tempo.style.color = 'red';
+        } 
+        if (tempo.innerHTML <= 1){
+            clearInterval(intervalId);
+            partida.verificarGrid();
+        }
+
+        tempo.innerHTML--;
+
+    }, 1000)
+    
     
 }
 
