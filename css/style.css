@@ -85,33 +85,33 @@ form {
 }
 
 #board{
-    width: 70vmin;
-    height: 70vmin;
+    width: 75vmin;
+    height: 75vmin;
 }
 
 #imgGrid{
-    height: 70vmin;
-    width: 70vmin;
+    height: 75vmin;
+    width: 75vmin;
     border: 3px dashed white;
     padding: 10px;
 }
 
 
 #imgGridPadrao{
-    height: 70vmin;
-    width: 70vmin;
+    height: 75vmin;
+    width: 75vmin;
     border: 3px dashed white;
     padding: 10px;
 }
 .pos>img{
-    height: 22.7vmin;
+    height: 24.5vmin;
 }
 
 .pos>img:hover {
     opacity: 0.6;
 }
 .posPadrao>img{
-    height: 22.7vmin;
+    height: 24.5vmin;
 }
 
 .selectImg{
@@ -120,7 +120,7 @@ form {
 
 #indicadores{
     display: flex;
-    width: 70vmin;
+    width: 75vmin;
     justify-content:space-between;
 }
 #indicadores>h5{
