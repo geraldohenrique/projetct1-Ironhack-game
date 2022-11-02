@@ -60,8 +60,8 @@ form {
 }
 
 #carouselExampleControls{
-    height: 70vmin;
-    width: 70vmin;
+    height: 75vmin;
+    width: 75vmin;
     border: 4px dashed white;
     padding: 10px;
     
@@ -104,14 +104,14 @@ form {
     padding: 10px;
 }
 .pos>img{
-    height: 24.5vh;
+    height: 22.7vmin;
 }
 
 .pos>img:hover {
     opacity: 0.6;
 }
 .posPadrao>img{
-    height: 24.5vh;
+    height: 22.7vmin;
 }
 
 .selectImg{
@@ -120,7 +120,7 @@ form {
 
 #indicadores{
     display: flex;
-    width: 75vh;
+    width: 70vmin;
     justify-content:space-between;
 }
 #indicadores>h5{
@@ -136,7 +136,7 @@ form {
     color: rgb(11, 124, 30);
 }
 #help{
-    width: 75vh;
+    width: 75vmin;
     
 }
 
@@ -150,7 +150,7 @@ form {
 }
 #telaFinal h1{
     text-align: center;
-    font-size:4vmax;
+    font-size:8vmin;
     font-weight: 500;
     color: rgb(19, 25, 32);
 }
