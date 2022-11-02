@@ -2,63 +2,50 @@ let telaInicial = document.querySelector('#telaInicial')
 let inputName = document.querySelector('#inputName')
 let btnGamer = document.querySelector('#btnGamer')
 let telaEscolha = document.querySelector('#telaEscolha')
-let imgEscolhida1 = document.querySelector("#treewayImg")
-let imgEscolhida2 = document.querySelector("#townImg")
-let imgEscolhida3 = document.querySelector("#arabMetalImg")
+let imgEscolhida = document.querySelectorAll(".imgEscolhida")
 let btnHelp = document.querySelector("#help");
 let imgGrid = document.querySelector("#imgGrid");
 let imgGridPadrao = document.querySelector("#imgGridPadrao");
 let tempo = document.querySelector("#tempo");
+const alertPlaceholder = document.getElementById('alertPlaceholder')
 
+const alert = (message) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-warning alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder.append(wrapper)
+}
 
 
 btnGamer.addEventListener('click', (event) =>{
-    // se a função está recarregando a página, use: preventDefault()
+    
     event.preventDefault();
    
     if(inputName.value === ""){
-        alert("Digite um nome para iniciar a jogada");
+        alert("Digite um nome para iniciar a partida");
         return
     }
-
-    let userName = document.querySelector("#inputName").value;
-    let titulo = document.querySelector('#tituloTelaEscolha');
-    titulo.textContent = `Bem vindo(a), ${userName}!
-    Escolha o seu Quebra-Cabeça:`
 
     telaInicial.style.display = "none";
     telaEscolha.style.display = "flex";
    
 })
 
-imgEscolhida1.addEventListener('click', (event) =>{
-    telaEscolha.style.display = "none";
-    telaPrincipal.style.display = "flex";
-    const partida = new QuebraCabeca(imgEscolhida1.id)
-    partida.obterGrids();
-    partida.montarGrids();
-    jogar(partida);
+imgEscolhida.forEach((item)=>{
+    item.addEventListener('click', () =>{
+        const partida = new QuebraCabeca(item.id);
+        partida.obterGrids();
+        partida.montarGrids();
+        telaEscolha.style.display = "none";
+        telaPrincipal.style.display = "flex";
+        jogar(partida);
+    })
 })
-
-imgEscolhida2.addEventListener('click', (event) =>{
-    telaEscolha.style.display = "none";
-    telaPrincipal.style.display = "flex";
-    const partida = new QuebraCabeca(imgEscolhida2.id)
-    partida.obterGrids();
-    partida.montarGrids();
-    jogar(partida);
-})
-
-imgEscolhida3.addEventListener('click', (event) =>{
-    telaEscolha.style.display = "none";
-    telaPrincipal.style.display = "flex";
-    console.log(imgEscolhida3.id);
-    const partida = new QuebraCabeca(imgEscolhida3.id)
-    partida.obterGrids();
-    partida.montarGrids();
-    jogar(partida);
-})
-
 
 
 function jogar(partida) {
@@ -67,8 +54,8 @@ function jogar(partida) {
     
     posAtualizada.forEach((item, indice) =>{
         item.addEventListener('click', () =>{
-            item.classList.add = 'selectImg';
-            partida.trocarPosicao(item.src, indice)            
+            item.classList.add('selectImg');
+            partida.trocarPosicao(item.src, indice);           
         })
     })
     btnHelp.addEventListener('mousedown',()=> {

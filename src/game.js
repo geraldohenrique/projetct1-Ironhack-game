@@ -94,7 +94,9 @@ class QuebraCabeca{
         this.indiceSelect.push(indice);
         if (this.imgSelect.length === 2){
             posAtual[this.indiceSelect[0]].src = this.imgSelect[1];
-            posAtual[this.indiceSelect[1]].src = this.imgSelect[0]; 
+            posAtual[this.indiceSelect[1]].src = this.imgSelect[0];
+            posAtual[this.indiceSelect[0]].classList.remove("selectImg");
+            posAtual[this.indiceSelect[1]].classList.remove("selectImg");
             this.verificarGrid();
             this.imgSelect = [];
             this.indiceSelect = [];
@@ -117,15 +119,16 @@ class QuebraCabeca{
         }
         if(tempo > 0 && !matrizValidacao.includes(false)){
             this.userName = document.querySelector("#inputName").value;
-            let titulo = document.querySelector('#tituloTelaPrincipal');
-            titulo.textContent = `Parabéns, ${this.userName}! Você ganhou`;
-            document.querySelector('#indicadores').className = 'hide';
-            document.querySelector('#help').className = 'hide';
+            let titulo = document.querySelector('#mensagemFinal');
+            titulo.textContent = `Parabéns, ${this.userName}! Você conseguiu!`;
+            document.querySelector('#telaPrincipal').style.display = "none";
+            document.querySelector('#telaFinal').style.display = "flex";
         }else if (tempo <= 1){
             this.userName = document.querySelector("#inputName").value;
-            let titulo = document.querySelector('#tituloTelaPrincipal');
+            let titulo = document.querySelector('#mensagemFinal');
             titulo.textContent = `Sentimos muito, ${this.userName}! Você não tem mais tempo.`;
-            document.querySelector('#board').className = 'hide';
+            document.querySelector('#telaPrincipal').style.display = "none";
+            document.querySelector('#telaFinal').style.display = "flex";
         }
     }
 }
