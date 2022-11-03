@@ -7,6 +7,7 @@ let btnHelp = document.querySelector("#help");
 let imgGrid = document.querySelector("#imgGrid");
 let imgGridPadrao = document.querySelector("#imgGridPadrao");
 let tempo = document.querySelector("#tempo");
+let telaFinal = document.querySelector('#telaFinal')
 const alertPlaceholder = document.getElementById('alertPlaceholder')
 
 const alert = (message) => {
@@ -31,25 +32,29 @@ btnGamer.addEventListener('click', (event) =>{
         return
     }
 
+    escolherImagemBase();
     telaInicial.style.display = "none";
     telaEscolha.style.display = "flex";
    
 })
 
-imgEscolhida.forEach((item)=>{
-    item.addEventListener('click', () =>{
-        const partida = new QuebraCabeca(item.id);
-        partida.obterGrids();
-        partida.montarGrids();
-        telaEscolha.style.display = "none";
-        telaPrincipal.style.display = "flex";
-        jogar(partida);
+function escolherImagemBase() {
+    imgEscolhida.forEach((item)=>{
+        item.addEventListener('click', () =>{
+            const partida = [new QuebraCabeca(item.id)];
+            partida[0].obterGrids();
+            partida[0].montarGrids();
+            telaEscolha.style.display = "none";
+            telaPrincipal.style.display = "flex";
+            jogar(partida[0]);
+        })
     })
-})
+}
+
 
 
 function jogar(partida) {
-    tempo.innerHTML = 60;
+    tempo.innerHTML = 90;
     const posAtualizada = document.querySelectorAll('.peca')
     
     posAtualizada.forEach((item, indice) =>{
@@ -82,6 +87,9 @@ function jogar(partida) {
 
     }, 1000)
     
+    voltarBtn.addEventListener('click', ()=>{
+        window.location.href = window.location.href;
+    })
     
 }
 
