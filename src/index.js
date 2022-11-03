@@ -51,8 +51,6 @@ function escolherImagemBase() {
     })
 }
 
-
-
 function jogar(partida) {
     tempo.innerHTML = 90;
     const posAtualizada = document.querySelectorAll('.peca')
@@ -90,7 +88,7 @@ function jogar(partida) {
     voltarBtn.addEventListener('click', ()=>{
 
         window.location.href = window.location.href;
-        
+
     })
     
 }

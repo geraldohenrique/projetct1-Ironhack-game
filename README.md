@@ -7,7 +7,7 @@
 ## Ferramentas
 
   HTML, CSS e Javascript.
-  Utilizados elementos Bootstrap;
+  Utilizados elementos Bootstrap.
 
 ## O jogo
 
@@ -50,7 +50,7 @@
 
   Em caso de vitória ou derrota a tela final exibirá uma frase adequada e disponibilizará o botão "Nova Partida".
 
-  # Jogue à vontade!
+  # Jogue à vontade! 
 
     
 

@@ -90,6 +90,7 @@ class QuebraCabeca{
     }
 
     trocarPosicao(peca, indice){
+        
         let posAtual = document.querySelectorAll('.peca');
         this.imgSelect.push(peca);
         this.indiceSelect.push(indice);
@@ -105,7 +106,7 @@ class QuebraCabeca{
     }
 
     verificarGrid(){
-        
+
         let posAtual = document.querySelectorAll('.peca');
         let posPadrao = document.querySelectorAll('.pecaPadrao');
         let matrizValidacao = [];
