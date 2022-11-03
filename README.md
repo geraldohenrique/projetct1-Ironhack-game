@@ -34,21 +34,23 @@
 
   #### Funcionalidades
 
-    #### Selecionar e mover peça:
+  ##### Selecionar e mover peça:
 
-      Para selecionar uma peça clique em cima dela. É possível verificar que a peça ficará destacada (aumento da transparência).
+  Para selecionar uma peça clique em cima dela. É possível verificar que a peça ficará destacada (aumento da transparência).
 
-      Após selecionar uma peça, clique na posição a qual se deseja que ela seja movimentada. Uma peça trocará de lugar com a outra.
+  Após selecionar uma peça, clique na posição a qual se deseja que ela seja movimentada. Uma peça trocará de lugar com a outra.
 
-    #### Solicitar Ajuda
+  ##### Solicitar Ajuda
 
-      Para solicitar ajuda pressione o botão "Ajuda". A imagem da figura corretamente ordenada será exibida **enquanto o botão "Ajuda" continuar pressionado**. Ao soltar o botão o grid embaralhado voltará a ser exibido.
+  Para solicitar ajuda pressione o botão "Ajuda". A imagem da figura corretamente ordenada será exibida **enquanto o botão "Ajuda" continuar pressionado**. Ao soltar o botão o grid embaralhado voltará a ser exibido.
 
-      Esse recurso só pode ser usado duas vezes a cada partida.
+  Esse recurso só pode ser usado duas vezes a cada partida.
 
   ### Tela Final
 
-    Em caso de vitória ou derrota a tela final exibirá uma frase adequada e disponibilizará o botão "Nova Partida".
+  Em caso de vitória ou derrota a tela final exibirá uma frase adequada e disponibilizará o botão "Nova Partida".
+
+  # Jogue à vontade!
 
     
 
