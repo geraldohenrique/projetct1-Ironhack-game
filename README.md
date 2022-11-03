@@ -34,13 +34,13 @@
 
   #### Funcionalidades
 
-    ##### Selecionar e mover peça:
+    #### Selecionar e mover peça:
 
       Para selecionar uma peça clique em cima dela. É possível verificar que a peça ficará destacada (aumento da transparência).
 
       Após selecionar uma peça, clique na posição a qual se deseja que ela seja movimentada. Uma peça trocará de lugar com a outra.
 
-    ##### Solicitar Ajuda
+    #### Solicitar Ajuda
 
       Para solicitar ajuda pressione o botão "Ajuda". A imagem da figura corretamente ordenada será exibida **enquanto o botão "Ajuda" continuar pressionado**. Ao soltar o botão o grid embaralhado voltará a ser exibido.
 

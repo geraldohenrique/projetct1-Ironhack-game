@@ -9,6 +9,7 @@ class QuebraCabeca{
     }
 
     obterGrids(){
+
         let copyGridPadrao =[];
         switch (this.imgBase){
             case 'treewayImg':
@@ -104,6 +105,7 @@ class QuebraCabeca{
     }
 
     verificarGrid(){
+        
         let posAtual = document.querySelectorAll('.peca');
         let posPadrao = document.querySelectorAll('.pecaPadrao');
         let matrizValidacao = [];
