@@ -51,11 +51,10 @@ function escolherImagemBase() {
     })
 }
 
-function jogar(partida) {
-    
+function jogar(partida) {    
     tempo.innerHTML = 90;
     const posAtualizada = document.querySelectorAll('.peca')
-    
+  
     posAtualizada.forEach((item, indice) =>{
         item.addEventListener('click', () =>{
             item.classList.add('selectImg');
