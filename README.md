@@ -48,7 +48,7 @@
 
   ### Tela Final
 
-  Em caso de vitória ou derrota a tela final exibirá uma frase adequada e disponibilizará o botão "Nova Partida".
+  Em caso de vitória ou derrota a tela final exibirá a frase adequada e disponibilizará o botão "Nova Partida".
 
   # Jogue à vontade! 
 

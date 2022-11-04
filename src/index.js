@@ -41,12 +41,12 @@ btnGamer.addEventListener('click', (event) =>{
 function escolherImagemBase() {
     imgEscolhida.forEach((item)=>{
         item.addEventListener('click', () =>{
-            const partida = [new QuebraCabeca(item.id)];
-            partida[0].obterGrids();
-            partida[0].montarGrids();
+            const partida = new QuebraCabeca(item.id);
+            partida.obterGrids();
+            partida.montarGrids();
             telaEscolha.style.display = "none";
             telaPrincipal.style.display = "flex";
-            jogar(partida[0]);
+            jogar(partida);
         })
     })
 }

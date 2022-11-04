@@ -65,7 +65,7 @@ class QuebraCabeca{
                 break;
 
         }
-        // return (this.gridPadrao, this.gridEmbaralhado);
+        
 
     }
 
