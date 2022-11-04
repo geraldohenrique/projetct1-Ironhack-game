@@ -62,7 +62,7 @@ imgEscolhida3.addEventListener('click', (event) =>{
 
 
 function jogar(partida) {
-    tempo.innerHTML = 60;
+    tempo.innerHTML = 90;
     const posAtualizada = document.querySelectorAll('.peca')
     
     posAtualizada.forEach((item, indice) =>{
