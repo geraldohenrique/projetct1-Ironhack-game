@@ -1,4 +1,5 @@
 class QuebraCabeca{
+    
     constructor(imgBase){
         this.imgBase = imgBase;
         this.imgSelect = [];
